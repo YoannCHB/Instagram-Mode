@@ -204,11 +204,13 @@ function instaLoop(){
     let article = document.getElementsByTagName('article');
     for(var n in article){
        try{
-	    let btn = article[n].getElementsByClassName("dCJp8 afkep _0mzm-");
+        let btn = article[n].getElementsByClassName("dCJp8 afkep _0mzm-");
+        if(btn[0].getAttribute('class') == config.btnLikeClass){
         sleep(data.time, function(){
             btn[0].click();
             data.like += 1;
         });
+        }
     }
     catch(e){}
     }
